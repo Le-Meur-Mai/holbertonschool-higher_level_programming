@@ -1,0 +1,1 @@
+Exercises on th conditionals statements and loops in python
