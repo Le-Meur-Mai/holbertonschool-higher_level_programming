@@ -6,6 +6,7 @@ last_number = 0
 if number < 0:
     last_number = number * -1
     last_number = last_number % 10
+    last_number *= -1
 else:
     last_number = number % 10
 
