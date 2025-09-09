@@ -3,7 +3,7 @@
 def roman_to_int(roman_string):
     result = 0
     pre_value = 0
-    if roman_string is None or roman_string == "" or roman_string is str:
+    if roman_string is None or not isinstance(roman_string, str):
         return (0)
     roman_dictionary = {
                             'I' : 1,
