@@ -2,18 +2,23 @@
 
 def roman_to_int(roman_string):
     result = 0
-
+    pre_value = 0
     if roman_string is None or roman_string == "" or type(roman_string) != str:
         return (0)
- 
-    roman_letter_list = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
-    roman_number_list = [1, 5, 10, 50, 100, 500, 1000]
-
+    roman_dictionary = {
+                            'I' : 1,
+                            'V': 5,
+                            'X': 10,
+                            'L': 50,
+                            'C': 100,
+                            'D': 500,
+                            'M': 1000
+                        }
     for i in range(0, len(roman_string)):
-        for j in range(0, len(roman_letter_list)):
-            if roman_string[i] == roman_letter_list[j]:
-                if i != 0 and roman_string[i - 1] == roman_letter_list[j - 1]:
-                    result += (roman_number_list[j] - roman_number_list[j - 1])
-                else:
-                    result += roman_number_list[j]
+        for j in roman_dictionary:
+            if roman_string[i] == j:
+                result += roman_dictionary[j]
+                if i != 0 and pre_value < roman_dictionary[j]:
+                    result -= (2 * pre_value)
+                pre_value = roman_dictionary[j]
     return (result)
