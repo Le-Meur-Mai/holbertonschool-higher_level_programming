@@ -1,0 +1,28 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_basic = "Hello: World? wow. Damn"
+>>> text_piege = "   Salut?   Yo"
+
+>>> text_indentation(text_basic)
+Hello:
+<BLANKLINE>
+World?
+<BLANKLINE>
+wow.
+<BLANKLINE>
+Damn
+
+>>> text_indentation(text_piege)
+Salut?
+<BLANKLINE>
+Yo
+
+>>> text_indentation(3.5)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
