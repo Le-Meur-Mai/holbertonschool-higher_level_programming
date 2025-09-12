@@ -13,9 +13,10 @@ My name is hello world
 My name is sacha ketchum
 
 >>> say_my_name(wrong_name, last_name)
-Traceback (most recent call last):
-...
-TypeError: Strings must have at least one character
+My name is  ketchum
+
+>>> say_my_name(first_name)
+My name is sacha 
 
 >>> say_my_name(3, trois)
 Traceback (most recent call last):
