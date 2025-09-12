@@ -21,3 +21,5 @@ class TestMaxInteger(unittest.TestCase):
     def text_max_error(self):
         '''Test result when a list is empty'''
         self.assertEqual(max_integer([]), None)
+        '''Test result when the argument is None'''
+        self.assertRaises(TypeError, max_integer, None)
