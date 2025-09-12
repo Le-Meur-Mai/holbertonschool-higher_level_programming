@@ -1,0 +1,28 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> first_name = "sacha"
+>>> last_name = "ketchum"
+>>> trois = [3, 3, 3]
+
+>>> wrong_name = ""
+
+>>> say_my_name("hello", "world")
+My name is hello world
+
+>>> say_my_name(first_name, last_name)
+My name is sacha ketchum
+
+>>> say_my_name(wrong_name, last_name)
+Traceback (most recent call last):
+...
+TypeError: Strings must have at least one character
+
+>>> say_my_name(3, trois)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("hello", trois)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
