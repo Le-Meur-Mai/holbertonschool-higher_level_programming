@@ -10,7 +10,7 @@ class TestMaxInteger(unittest.TestCase):
         '''Test result when all int are positive'''
         self.assertEqual(max_integer([1, 2, 10, 5]), 10)
         '''Test result when all int are negative'''
-        self.assertEqual(max_integer([-1, 6, -7, 3]), 6)
+        self.assertEqual(max_integer([1, 6, -7, 3]), 6)
         '''Test result when there is one int'''
         self.assertEqual(max_integer([3]), 3)
         '''Test result when the max number is at different positions'''
@@ -20,4 +20,4 @@ class TestMaxInteger(unittest.TestCase):
 
     def text_max_error(self):
         '''Test result when a list is empty'''
-        self.assertEqual(max_integer(), None)
+        self.assertEqual(max_integer([]), None)
