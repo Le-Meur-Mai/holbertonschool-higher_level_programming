@@ -7,6 +7,7 @@ Ce module permet de fournir une fonction qui vous affiche des carrés de #
 suivant un nombre rentré en argument.
 '''
 
+
 def print_square(size):
     '''
     Fonction qui affiche des carrés de # suivant une taille donnée en argument.
