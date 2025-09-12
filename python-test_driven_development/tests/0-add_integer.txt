@@ -1,0 +1,26 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(2, 3)
+5
+>>> add_integer(2, 0)
+2
+>>> add_integer(80, -5)
+75
+>>> add_integer(-40, -65)
+-105
+>>> add_integer(7.5, 3.2)
+10
+>>> add_integer(-10.2, -70.4)
+-80
+>>> add_integer(float('inf'), 10)
+Traceback (most recent call last):
+...
+OverflowError: Float too big to convert to int for the system
+>>> add_integer('a', 12)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> add_integer(40, 'b')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
