@@ -57,13 +57,12 @@ class Square:
         Modification of the position of the square, that verify if the argument
         is correct
         '''
-        if (
-            type(value) is not tuple
-            or len(value) != 2
-            or value[0] < 0
-            or value[1] < 0
-        ):
+        if type(value) is not tuple or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        for i in value:
+            if type(value[i]) is not int or type(value[i]) < 0:
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
@@ -91,16 +90,15 @@ class Square:
         '''
         Instance that print the current square with # at the position entered
         '''
-
-        if self.position[1] > 0:
-            for h in range(0, self.__position[1]):
-                print("")
-
-        for i in range(0, self.__size):
-            for j in range(0, self.__position[0]):
-                print("_", end="")
-            print("#" * self.__size, end="")
-            print("")
-
         if self.__size == 0:
             print("")
+        else:
+            if self.position[1] > 0:
+                for h in range(0, self.__position[1]):
+                    print("")
+
+            for i in range(0, self.__size):
+                for j in range(0, self.__position[0]):
+                    print("_", end="")
+                print("#" * self.__size, end="")
+                print("")
