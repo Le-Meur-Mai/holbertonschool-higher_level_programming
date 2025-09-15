@@ -91,15 +91,16 @@ class Square:
         '''
         Instance that print the current square with # at the position entered
         '''
+
+        if self.position[1] > 0:
+            for h in range(0, self.__position[1]):
+                print("")
+
+        for i in range(0, self.__size):
+            for j in range(0, self.__position[0]):
+                print("_", end="")
+            print("#" * self.__size, end="")
+            print("")
+
         if self.__size == 0:
             print("")
-        else:
-            if self.position[1] > 0:
-                for h in range(0, self.__position[1]):
-                    print("")
-
-            for i in range(0, self.__size):
-                for j in range(0, self.__position[0]):
-                    print("_", end="")
-                print("#" * self.__size, end="")
-                print("")
