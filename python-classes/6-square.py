@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 '''
-3-square.py
+6-square.py
 
 Code that initialize the attributes of the class Square
 '''
@@ -20,8 +20,6 @@ class Square:
         '''
         self.size = size
         self.position = position
-        self.__size = size
-        self.__position = position
 
     @property
     def size(self):
