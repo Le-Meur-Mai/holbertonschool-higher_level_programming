@@ -77,7 +77,7 @@ class Rectangle:
         '''Return a new Rectangle with the arguments of the current
         rectangle'''
         return (f"Rectangle({self.__width}, {self.__height})")
-    
+
     def __del__(self):
         '''Print a sentence when an instance is delete'''
         print("Bye rectangle...")
