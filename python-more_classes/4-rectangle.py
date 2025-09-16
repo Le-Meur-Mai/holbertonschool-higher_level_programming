@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 '''
-2-rectangle.py
+4-rectangle.py
 
 Initialization of the class Rectangle and all of its attributes and instances.
 '''

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 '''
-3-rectangle.py
+5-rectangle.py
 
 Initialization of the class Rectangle and all of its attributes and instances.
 '''
@@ -72,3 +72,12 @@ class Rectangle:
                 if i != self.__height - 1:
                     rectangle_str += "\n"
             return rectangle_str
+
+    def __repr__(self):
+        '''Return a new Rectangle with the arguments of the current
+        rectangle'''
+        return (f"Rectangle({self.__width}, {self.__height})")
+    
+    def __del__(self):
+        '''Print a sentence when an instance is delete'''
+        print("Bye rectangle...")
