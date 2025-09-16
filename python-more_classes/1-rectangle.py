@@ -38,7 +38,7 @@ class Rectangle:
         '''Retrieve the attribute height'''
         return self.__height
 
-    @width.setter
+    @height.setter
     def height(self, value):
         '''Verification of the value entered in the argument height'''
         if type(value) is not int:
