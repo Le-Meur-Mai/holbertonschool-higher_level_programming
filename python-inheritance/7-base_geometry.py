@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''5-base_geometry.py
+'''7-base_geometry.py
 Module that contain an empty class'''
 
 
@@ -18,3 +18,5 @@ class BaseGeometry():
             raise TypeError(f"{name} must be an integer")
         elif value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+        else:
+            return True
