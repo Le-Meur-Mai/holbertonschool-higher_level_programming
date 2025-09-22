@@ -9,7 +9,4 @@ class MyList(list):
     def print_sorted(self):
         '''Method that print the elements of a list in ascending order'''
 
-        if len(self) < 2:
-            raise ValueError("The list requires at least two elements !")
-        else:
-            print(sorted(self))
+        print(sorted(self))
