@@ -10,4 +10,4 @@ class MyList(list):
         '''Method that print the elements of a list in ascending order'''
         new_list_sorted = sorted(self)
         print(new_list_sorted)
-        return(new_list_sorted)
+        return (new_list_sorted)
