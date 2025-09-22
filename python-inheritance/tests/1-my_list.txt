@@ -1,0 +1,17 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> new_list = MyList()
+>>> new_list.append(3)
+>>> new_list.append(1)
+>>> new_list.append(2)
+>>> print(new_list)
+[3, 1, 2]
+>>> new_list.print_sorted()
+[1, 2, 3]
+
+>>> new_list = MyList()
+>>> new_list.append(3)
+>>> new_list.print_sorted()
+Traceback (most recent call last):
+...
+ValueError: The list requires at least two elements !
