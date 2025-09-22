@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 
 '''0-lookup.py
 This module contain a function that can list all the attributes and methods of
