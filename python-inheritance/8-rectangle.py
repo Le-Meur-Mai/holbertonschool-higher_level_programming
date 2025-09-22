@@ -4,6 +4,7 @@ Module that contain an empty class'''
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     '''Creating a subclass of BasicGeometry'''
     def __init__(self, width, height):
