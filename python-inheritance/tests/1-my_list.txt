@@ -24,3 +24,11 @@
 >>> new_list.append(3)
 >>> new_list.print_sorted()
 [-4, -3, 3]
+
+>>> new_list = MyList()
+>>> new_list.append(-3)
+>>> new_list.append(-4)
+>>> new_list.append(3)
+>>> result = new_list.print_sorted()
+>>> print(isinstance(result, MyList))
+False
