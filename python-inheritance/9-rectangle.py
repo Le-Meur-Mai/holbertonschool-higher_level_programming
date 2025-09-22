@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
         value_printed += "/"
         value_printed += str(self.__height)
         return value_printed
-    
+
     def area(self):
         area_value = self.__width * self.__height
         return area_value
