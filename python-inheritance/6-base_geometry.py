@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''5-base_geometry.py
+'''6-base_geometry.py
 Module that contain an empty class'''
 
 
