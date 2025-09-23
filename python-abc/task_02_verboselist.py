@@ -8,27 +8,44 @@ class VerboseList(list):
     # Creating a subclass to list, in order to custom it
     def append(self, item):
         # Modification of the append method
-        super().append(item)
-        print(f"Added [{item}] to the list.")
+        if item is None:
+            raise TypeError("The append method needs an argument")
+        else:
+            super().append(item)
+            print(f"Added [{item}] to the list.")
 
     def extend(self, list_item):
         # Modification of the extend method
-        super().extend(list_item)
-        print(f"Extended the list with [{len(list_item)}] items.")
+        if type(list_item) is not list:
+            raise TypeError("The extend method needs a list")
+        else:
+            super().extend(list_item)
+            print(f"Extended the list with [{len(list_item)}] items.")
 
     def remove(self, item):
         # Modification of the remove method
-        if item < len(self) and item >= 0:
+        if type(item) is not int:
+            raise TypeError("The remove method needs an integer")
+
+        elif item < len(self) and item >= 0:
             print(f"Removed [{item}] from the list.")
-        super().remove(item)
+            super().remove(item)
+
+        else:
+            raise IndexError("The pop method needs a positive index >= 0")
 
     def pop(self, item=None):
         # Modification of the pop method
         if item is None:
             print(f"Popped [{self[-1]}] from the list.")
             super().pop()
+
+        elif type(item) is not int:
+            raise TypeError("The pop method needs an integer")
+
         elif item < len(self) and item >= 0:
             print(f"Popped [{self[item]}] from the list.")
             super().pop(item)
+
         else:
-            super().pop(item)
+            raise IndexError("The pop method needs a positive index >= 0")
