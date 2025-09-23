@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''1-square.py
+'''10-square.py
 Module that contain the subclass square'''
 
 
