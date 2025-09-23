@@ -18,13 +18,9 @@ class VerboseList(list):
 
     def remove(self, item):
         # Modification of the remove method
-        if type(item) is not int:
-            raise TypeError("The remove method needs an integer")
-
-        elif item < len(self) and item >= 0:
+        if item < len(self) and item >= 0:
             print(f"Removed [{item}] from the list.")
             super().remove(item)
-
         else:
             raise IndexError("The pop method needs a positive index >= 0")
 
@@ -33,9 +29,6 @@ class VerboseList(list):
         if item is None:
             print(f"Popped [{self[-1]}] from the list.")
             super().pop()
-
-        elif type(item) is not int:
-            raise TypeError("The pop method needs an integer")
 
         elif item < len(self) and item >= 0:
             print(f"Popped [{self[item]}] from the list.")
