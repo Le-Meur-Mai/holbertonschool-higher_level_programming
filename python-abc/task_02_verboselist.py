@@ -18,7 +18,7 @@ class VerboseList(list):
 
     def remove(self, item):
         # Modification of the remove method
-        if item < len(self) and item >= 0:
+        if item in self:
             print(f"Removed [{item}] from the list.")
             super().remove(item)
 
