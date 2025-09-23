@@ -21,10 +21,10 @@ class Shape(ABC):
         pass
 
 
-def shape_info(Shape):
+def shape_info(shape):
     '''Print the shapes infos, using the duck typing technic'''
-    print(f"Area: {Shape.area()}")
-    print(f"Perimeter: {Shape.perimeter()}")
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
 
 
 class Circle(Shape):
