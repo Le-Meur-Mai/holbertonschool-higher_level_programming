@@ -5,7 +5,7 @@ Adding a class with abstract method and experimenting with the duck typing
 method'''
 
 from abc import ABC, abstractmethod
-import math
+from math import pi
 
 
 class Shape(ABC):
@@ -24,7 +24,7 @@ class Shape(ABC):
 def shape_info(Shape):
     '''Print the shapes infos, using the duck typing technic'''
     print(f"Area: {Shape.area()}")
-    print(f"Perimeter : {Shape.perimeter()}")
+    print(f"Perimeter: {Shape.perimeter()}")
 
 
 class Circle(Shape):
@@ -35,11 +35,11 @@ class Circle(Shape):
 
     def area(self):
         '''Initialization of the area'''
-        return math.pi * self.radius ** 2
+        return pi * self.radius ** 2
 
     def perimeter(self):
         '''Initialization of the perimeter'''
-        return math.pi * (self.radius * 2)
+        return pi * (self.radius * 2)
 
 
 class Rectangle(Shape):
