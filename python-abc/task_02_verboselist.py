@@ -28,6 +28,9 @@ class VerboseList(list):
             print(f"Popped [{self[-1]}] from the list.")
             super().pop()
 
-        elif item < len(self) and item >= 0:
+        elif type(item) is int and item < len(self) and item >= 0:
             print(f"Popped [{self[item]}] from the list.")
             super().pop(item)
+
+        else:
+            raise IndexError("Index out of range")
