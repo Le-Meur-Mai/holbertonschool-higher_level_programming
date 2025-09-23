@@ -30,3 +30,5 @@ class VerboseList(list):
         elif item < len(self) and item >= 0:
             print(f"Popped [{self[item]}] from the list.")
             super().pop(item)
+        else:
+            super().pop(item)
