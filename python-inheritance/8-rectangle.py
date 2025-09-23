@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''8-base_geometry.py
-Module that contain an empty class'''
+Module that create the subclass rectangle'''
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
