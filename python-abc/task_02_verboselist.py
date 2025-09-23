@@ -8,19 +8,13 @@ class VerboseList(list):
     # Creating a subclass to list, in order to custom it
     def append(self, item):
         # Modification of the append method
-        if item is None:
-            raise TypeError("The append method needs an argument")
-        else:
-            super().append(item)
-            print(f"Added [{item}] to the list.")
+        super().append(item)
+        print(f"Added [{item}] to the list.")
 
     def extend(self, list_item):
         # Modification of the extend method
-        if type(list_item) is not list:
-            raise TypeError("The extend method needs a list")
-        else:
-            super().extend(list_item)
-            print(f"Extended the list with [{len(list_item)}] items.")
+        super().extend(list_item)
+        print(f"Extended the list with [{len(list_item)}] items.")
 
     def remove(self, item):
         # Modification of the remove method
