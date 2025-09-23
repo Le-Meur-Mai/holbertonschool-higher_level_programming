@@ -21,8 +21,6 @@ class VerboseList(list):
         if item < len(self) and item >= 0:
             print(f"Removed [{item}] from the list.")
             super().remove(item)
-        else:
-            raise IndexError("The pop method needs a positive index >= 0")
 
     def pop(self, item=None):
         # Modification of the pop method
@@ -33,6 +31,3 @@ class VerboseList(list):
         elif item < len(self) and item >= 0:
             print(f"Popped [{self[item]}] from the list.")
             super().pop(item)
-
-        else:
-            raise IndexError("The pop method needs a positive index >= 0")
