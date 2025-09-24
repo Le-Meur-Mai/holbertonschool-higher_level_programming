@@ -26,11 +26,11 @@ class VerboseList(list):
         # Modification of the pop method
         if item is None:
             print(f"Popped [{self[-1]}] from the list.")
-            super().pop()
+            return super().pop()
 
         elif type(item) is int and item < len(self):
             print(f"Popped [{self[item]}] from the list.")
-            super().pop(item)
+            return super().pop(item)
 
         else:
             raise IndexError("Index out of range")
