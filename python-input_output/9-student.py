@@ -5,6 +5,7 @@
 Module that add the class student with all its attributes and methods
 '''
 
+
 class Student:
     '''Creating a class Student with all its attributes and methods'''
 
