@@ -4,8 +4,6 @@
 8-class_to_json.py
 Module that add a function who returns the dictionary description of an object
 '''
-import json
-
 
 def class_to_json(obj):
     '''Function that returns the dictionary description with simple data
