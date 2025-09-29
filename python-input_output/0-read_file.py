@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-'''Module that add a function that can read a file'''
+'''
+0-read_file.py
+Module that add a function that can read a file
+'''
 
 
 def read_file(filename=""):
