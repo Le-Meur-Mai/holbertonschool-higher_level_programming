@@ -18,14 +18,16 @@ class Student:
     def to_json(self, attrs=None):
         '''Adding a method that retrieve the dictionnary format of all
         the attributes of the instance or of the specified attributes'''
-        if attrs is None:
-            return self.__dict__
-        elif type(attrs) is list and len(attrs) > 0:
+        if type(attrs) is list and len(attrs) > 0:
             new_dict = {}
+            j = 0
             for i in attrs:
                 if type(i) is str and i in self.__dict__:
                     new_dict[i] = self.__dict__[i]
-            if new_dict is {}:
+                    j += 1
+            if new_dict is {} or j == 0:
                 return self.__dict__
             else:
                 return new_dict
+        else:
+            return self.__dict__
