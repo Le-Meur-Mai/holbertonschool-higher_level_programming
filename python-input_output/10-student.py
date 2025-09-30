@@ -22,12 +22,7 @@ class Student:
             return self.__dict__
         else:
             new_dict = {}
-            j = 0
             for i in attrs:
                 if i in self.__dict__:
                     new_dict.update({i: getattr(self, i)})
-                    j += 1
-            if j == 0:
-                return self.__dict__
-            else:
-                return new_dict
+            return new_dict
