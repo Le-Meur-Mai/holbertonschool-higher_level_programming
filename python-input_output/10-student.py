@@ -27,7 +27,7 @@ class Student:
                 if i in self.__dict__:
                     new_dict[i] = self.__dict__[i]
                     j += 1
-            if new_dict is {} or j == 0:
+            if j == 0:
                 return self.__dict__
             else:
                 return new_dict
