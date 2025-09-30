@@ -25,7 +25,7 @@ class Student:
             j = 0
             for i in attrs:
                 if i in self.__dict__:
-                    new_dict[i] = self.__dict__[i]
+                    new_dict.update({i: getattr(self, i)})
                     j += 1
             if j == 0:
                 return self.__dict__
