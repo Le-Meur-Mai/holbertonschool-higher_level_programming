@@ -9,14 +9,13 @@ from flask import request
 
 app = Flask(__name__)
 
+users = {}
+
 
 @app.route("/", methods=["GET"])
 def home():
     '''When there is no endpoint, this function print a simple sentence'''
     return "Welcome to the Flask API!", 200
-
-
-users = {}
 
 
 @app.route("/data", methods=["Get"])
@@ -31,7 +30,7 @@ def data():
 def status():
     '''On the endpoint /status, this function retrieves the status of the
     server'''
-    return "ok", 200
+    return "OK", 200
 
 
 @app.route("/users/<username>", methods=["Get"])
@@ -56,7 +55,7 @@ def add_user():
                   "city": "San Francisco"}
     for i in user_model:
         if i not in new_user:
-            return jsonify({"error": "Username is required"}), 400
+            return jsonify({"error": f"{i} is required"}), 400
 
     users[new_user["username"]] = new_user
     return jsonify({"message": "User added", "user": new_user}), 201
