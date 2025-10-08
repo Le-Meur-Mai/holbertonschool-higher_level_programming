@@ -56,7 +56,7 @@ def add_user():
                   "city": "San Francisco"}
     for i in user_model:
         if i not in new_user:
-            return jsonify({"error": f"{i} is required"}), 400
+            return jsonify({"error": "Username is required"}), 400
 
     users[new_user["username"]] = new_user
     return jsonify({"message": "User added", "user": new_user}), 201
