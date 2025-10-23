@@ -18,7 +18,10 @@ if __name__ == "__main__":
                          db=database_name,
                          port=3306)
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id")
+    cur.execute(
+        "SELECT id, name FROM states "
+        "WHERE name LIKE BINARY 'N%' "
+        "ORDER BY id")
     for row in cur.fetchall():
         print("({}, '{}')".format(row[0], row[1]))
     cur.close()
