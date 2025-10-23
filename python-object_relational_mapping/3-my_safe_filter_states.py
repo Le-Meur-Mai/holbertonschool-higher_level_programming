@@ -12,6 +12,7 @@ if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
+    state_name_searched = sys.argv[4]
 
     db = MySQLdb.connect(host="localhost",
                          user=mysql_username,
@@ -22,7 +23,7 @@ if __name__ == "__main__":
     cur.execute(
         "SELECT id, name FROM states "
         "WHERE name LIKE BINARY %s "
-        "ORDER BY id"), (sys.argv[4])
+        "ORDER BY id ASC", (state_name_searched,))
     for row in cur.fetchall():
         print("({}, '{}')".format(row[0], row[1]))
     cur.close()
