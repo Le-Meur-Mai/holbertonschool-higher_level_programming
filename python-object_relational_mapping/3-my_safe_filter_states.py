@@ -20,8 +20,8 @@ if __name__ == "__main__":
                          db=database_name,
                          port=3306)
     cur = db.cursor()
-    query = "SELECT id, name FROM states WHERE name "
-    "LIKE BINARY %s ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
+
     cur.execute(query, (state_name_searched,))
     for row in cur.fetchall():
         print("({}, '{}')".format(row[0], row[1]))
