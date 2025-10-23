@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute(
         "SELECT id, name FROM states "
-        "WHERE name = %s "
+        "WHERE name LIKE BINARY %s "
         "ORDER BY id", (sys.argv[4],))
     for row in cur.fetchall():
         print("({}, '{}')".format(row[0], row[1]))
