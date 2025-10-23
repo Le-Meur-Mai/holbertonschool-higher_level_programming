@@ -20,6 +20,6 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id")
     for row in cur.fetchall():
-        print(f"({row[0]}, '{row[1]}')")
+        print("({}, '{}')".format(row[0], row[1]))
     cur.close()
     db.close()
