@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
-"""Module that connects to a database thanks to severals arguments in the
+"""0-select_states.py
+Module that connects to a database thanks to severals arguments in the
 command line such as your username, your password and the name of the
 database, it also give you the list of states and their id
-in the table states"""
+in the table 'states'"""
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
     mysql_username = sys.argv[1]
