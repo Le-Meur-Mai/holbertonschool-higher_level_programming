@@ -23,7 +23,11 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC"
 
     cur.execute(query, (state_name_searched,))
-    for row in cur.fetchall():
-        print("({}, '{}')".format(row[0], row[1]))
+
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
+    
     cur.close()
     db.close()
