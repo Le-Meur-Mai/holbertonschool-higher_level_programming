@@ -1,44 +1,29 @@
 #!/usr/bin/python3
-"""
-Script that lists all states with a name starting with N
-from the database hbtn_0e_0_usa
-"""
+"""3-my_safe_filter_states.py
+Module that connects to a database thanks to severals arguments in the
+command line such as your username, your password and the name of the
+database, it also give you the list of states and their id
+in the table 'states' corresponding to the user request in the command line in
+a secure way"""
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
-    # Get command line arguments
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    state_name = sys.argv[4]
+    state_name_searched = sys.argv[4]
 
-    # Connect to MySQL server
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
-
-    # Create a cursor object
-    cursor = db.cursor()
-
-    # Create SQL query using format with user input
+    db = MySQLdb.connect(host="localhost",
+                         user=mysql_username,
+                         passwd=mysql_password,
+                         db=database_name,
+                         port=3306)
+    cur = db.cursor()
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
 
-    # Execute the query
-    cursor.execute(query, (state_name,))
-
-    # Fetch all results
-    rows = cursor.fetchall()
-
-    # Display results
-    for row in rows:
-        print(row)
-
-    # Close cursor and connection
-    cursor.close()
+    cur.execute(query, (state_name_searched,))
+    for row in cur.fetchall():
+        print("({}, '{}')".format(row[0], row[1]))
+    cur.close()
     db.close()
