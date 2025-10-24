@@ -23,4 +23,4 @@ if __name__ == "__main__":
     if all_states:
         print(f"{all_states.id}: {all_states.name}")
     else:
-        print("")
+        print("Nothing")
