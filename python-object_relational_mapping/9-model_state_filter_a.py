@@ -21,8 +21,6 @@ if __name__ == "__main__":
 
     all_states = session.query(State).order_by(
         State.id).filter(State.name.like('%a%')).all()
-    if all_states:
-        for row in all_states:
-            print(f"{row.id}: {row.name}")
-    else:
-        print("Nothing")
+    
+    for row in all_states:
+        print(f"{row.id}: {row.name}")
