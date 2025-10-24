@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""model_state.py
-Creation of the class state for SQLAlchemy in order to use ORM"""
+"""model_city.py
+Creation of the class city for SQLAlchemy in order to use ORM"""
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
+
 
 class City(Base):
     '''Class that represents the table city in a database'''
