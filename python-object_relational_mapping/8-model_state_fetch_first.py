@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module that create a session and request the first state id and name
 from the table State"""
 
