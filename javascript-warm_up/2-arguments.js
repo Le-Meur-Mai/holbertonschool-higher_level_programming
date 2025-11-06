@@ -1,4 +1,4 @@
-#! /usr/bin/node
+#!/usr/bin/node
 
 /* Script that tell you if several arguments are passed */
 
