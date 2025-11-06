@@ -1,4 +1,4 @@
-/*Print a sentence in Js*/
+/* Print a sentence in Js */
 
 const myVar = 'JavaScript is amazing';
 
