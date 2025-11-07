@@ -7,10 +7,10 @@ const argumentsList = process.argv;
 if (argumentsList.length < 4) {
   console.log('0');
 } else {
-  let maxNumber = process.argv[2];
+  let maxNumber = parseInt(argumentsList[2]);
   let secondMaxNumber = maxNumber;
   let count = 0;
-  for (let i = 0; argumentsList[i]; i++) {
+  for (let i = 0; i < argumentsList.length; i++) {
     argumentsList[i] = parseInt(argumentsList[i]);
     if (argumentsList[i] > maxNumber) {
       secondMaxNumber = maxNumber;
@@ -20,7 +20,8 @@ if (argumentsList.length < 4) {
   }
   if (count === 0) {
     secondMaxNumber = process.argv[3];
-    for (let i = 3; argumentsList[i]; i++) {
+    for (let i = 3; i < argumentsList.length; i++) {
+      argumentsList[i] = parseInt(argumentsList[i]);
       if (argumentsList[i] > secondMaxNumber) {
         secondMaxNumber = argumentsList[i];
       }
