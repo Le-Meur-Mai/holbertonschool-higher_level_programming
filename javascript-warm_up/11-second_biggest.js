@@ -2,30 +2,11 @@
 
 /* Script that searches the second biggest integer in the list of arguments. */
 
-const argumentsList = process.argv;
+const argumentsList = process.argv.slice(2).map(Number);
 
-if (argumentsList.length < 4) {
+if (argumentsList.length < 2) {
   console.log('0');
 } else {
-  let maxNumber = parseInt(argumentsList[2]);
-  let secondMaxNumber = maxNumber;
-  let count = 0;
-  for (let i = 0; i < argumentsList.length; i++) {
-    argumentsList[i] = parseInt(argumentsList[i]);
-    if (argumentsList[i] > maxNumber) {
-      secondMaxNumber = maxNumber;
-      maxNumber = argumentsList[i];
-      count++;
-    }
-  }
-  if (count === 0) {
-    secondMaxNumber = process.argv[3];
-    for (let i = 3; i < argumentsList.length; i++) {
-      argumentsList[i] = parseInt(argumentsList[i]);
-      if (argumentsList[i] > secondMaxNumber) {
-        secondMaxNumber = argumentsList[i];
-      }
-    }
-  }
-  console.log(secondMaxNumber);
+  const numberSorted = argumentsList.sort((a, b) => b - a);
+  console.log(numberSorted[1]);
 }
