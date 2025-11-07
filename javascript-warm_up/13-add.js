@@ -6,4 +6,4 @@ exports.add = function (a, b) {
   const num1 = parseInt(a);
   const num2 = parseInt(b);
   return (num1 + num2);
-}
+};
