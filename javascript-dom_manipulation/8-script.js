@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* displays the value of hello from that fetch in the HTML element with id hello. */
+/* script that displays the value of hello from that fetch in the HTML element with id hello. */
 
 document.addEventListener('DOMContentLoaded', () => {
   const url = 'https://hellosalut.stefanbohacek.com/?lang=fr';
