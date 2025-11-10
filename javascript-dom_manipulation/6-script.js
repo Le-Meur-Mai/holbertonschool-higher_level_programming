@@ -11,4 +11,7 @@ fetch(url)
     const nameToAdd = data.name;
     const elementModify = document.getElementById('character');
     elementModify.innerHTML = nameToAdd;
+  })
+  .catch(error => {
+    console.error('error', error);
   });
