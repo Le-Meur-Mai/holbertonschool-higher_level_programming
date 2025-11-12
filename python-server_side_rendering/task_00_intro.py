@@ -37,7 +37,10 @@ def generate_invitations(template, attendees):
                 continue
             with open(
                     f'./output_{i}.txt', 'w', encoding='utf-8') as invitation:
-                invitation.write(template.format(**attendee))
+                invite = template
+                for key in attendee:
+                    invite = invite.replace(f'{{{key}}}', attendee[key])
+                invitation.write(invite)
 
     except Exception:
         raise
