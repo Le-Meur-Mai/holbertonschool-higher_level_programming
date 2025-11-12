@@ -12,5 +12,8 @@ fetch(url)
       const newElement = document.createElement('li');
       newElement.textContent = movie.title;
       listMovies.appendChild(newElement);
-    });
+    })
+      .catch(error => {
+        console.error('error', error);
+      });
   });
