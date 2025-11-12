@@ -35,10 +35,10 @@ def generate_invitations(template, attendees):
         i = 0
         for attendee in attendees:
             i += 1
-            if os.path.exists(f'./output_{i}.txt'):
+            if os.path.exists(f'output_{i}.txt'):
                 continue
             with open(
-                    f'./output_{i}.txt', 'w', encoding='utf-8') as invitation:
+                    f'output_{i}.txt', 'w', encoding='utf-8') as invitation:
                 invite = template
                 for key in attendee:
                     invite = invite.replace(f'{{{key}}}', attendee[key])
