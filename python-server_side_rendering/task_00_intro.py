@@ -22,12 +22,13 @@ def generate_invitations(template, attendees):
     elif len(attendees) <= 0:
         raise ValueError('No data provided, no output files generated.')
 
+    dict_model = ['name', 'event_title', 'event_date', 'event_location']
     for invite in attendees:
         if not isinstance(invite, dict):
             raise ValueError('template must be a string and attendees a list'
                              ' of dictionaries.')
-        for key in invite:
-            if invite[key] is None:
+        for key in dict_model:
+            if key not in invite or invite[key] is None:
                 invite[key] = 'N/A'
     try:
         i = 0
