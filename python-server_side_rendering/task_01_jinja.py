@@ -1,8 +1,5 @@
 from flask import Flask, render_template
 
-'''Module that use jinja for reusable html code, and load all the data in
-the server side'''
-
 app = Flask(__name__)
 
 
