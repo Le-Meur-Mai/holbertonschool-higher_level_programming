@@ -29,8 +29,11 @@ def contact():
 def items():
     if not os.path.exists('items.json'):
         print('No items found')
-    with open('items.json', 'r', encoding='utf-8') as file:
-        list_items = json.load(file)
+    try:
+        with open('items.json', 'r', encoding='utf-8') as file:
+            list_items = json.load(file)
+    except:
+        list_items = {'items': []}
     return render_template('items.html', items=list_items['items'])
 
 
