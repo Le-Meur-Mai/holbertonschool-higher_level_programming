@@ -30,9 +30,10 @@ def items():
     try:
         with open('items.json', 'r', encoding='utf-8') as file:
             list_items = json.load(file)
+            items=list_items['items']
     except:
-        list_items = {'items': []}
-    return render_template('items.html', items=list_items['items'])
+        items = []
+    return render_template('items.html', items=items)
 
 
 if __name__ == '__main__':
