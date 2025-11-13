@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+
+from flask import Flask, render_template
+import json
+import os
+
+'''Module that use jinja for reusable html code, and load all the data in
+the server side'''
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/items')
+def items():
+    if not os.path.exists('items.json'):
+        print('No items found')
+    with open('items.json', 'r', encoding='utf-8') as file:
+        list_items = json.load(file)
+    return render_template('items.html', items=list_items['items'])
+
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
