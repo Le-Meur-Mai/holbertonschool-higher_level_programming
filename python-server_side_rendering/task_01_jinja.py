@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from flask import Flask, render_template
 
 '''Module that use jinja for reusable html code, and load all the data in
