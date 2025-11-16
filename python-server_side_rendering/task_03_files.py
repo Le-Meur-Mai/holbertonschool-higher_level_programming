@@ -30,10 +30,11 @@ def items():
     try:
         with open('items.json', 'r', encoding='utf-8') as file:
             list_items = json.load(file)
-            items=list_items['items']
-    except:
+            items = list_items['items']
+    except Exception:
         items = []
     return render_template('items.html', items=items)
+
 
 @app.route('/products')
 def products():
@@ -57,26 +58,26 @@ def products():
                     data.append(row)
         except Exception as error:
             print(error)
- 
+
     else:
-        print('Wrong source')
-        return
-    
+        data = "Wrong source"
+
     if id:
         try:
             i = 0
+            id = int(id)
             for product in data:
-                if product.get('id') == id:
+                if int(product.get('id')) == id:
                     data = [product]
                     i += 1
                     break
             if i == 0:
-                data = None
+                data = "Product not found"
         except Exception as error:
             print(error)
 
     return render_template('product_display.html', data=data)
-    
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
